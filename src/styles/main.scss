@@ -1,0 +1,115 @@
+// Navbar
+
+$navbar-background-color: transparent;
+$navbar-item-color: #9986c9;
+$navbar-item-hover-background-color: transparent;
+$navbar-item-hover-color: #feac00;
+
+// Homepage
+
+h1 {
+  position: relative;
+}
+
+.title {
+  margin: 40px 0px 20px 0px;
+}
+
+$title-color: #9986c9;
+$title-family: 'Kings', cursive;
+$title-size: 40px;
+
+// Tarot Reading
+
+$card-background-color: transparent;
+$card-header-color: #9986c9;
+$card-footer-border-top: none;
+
+.time {
+  color: #feac00;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-family: 'Kings', cursive;
+}
+
+.info, .ready {
+  text-align: center;
+}
+
+.ready {
+  margin: 0px 0px 20px 0px;
+}
+
+.card-header {
+  justify-content: center;
+  text-align: center;
+  margin: 0rem 0rem 2rem 0rem;
+}
+
+.card-footer {
+  padding: 2rem 0.25rem;
+}
+
+p, span {
+  color: #9986c9;
+}
+
+.image {
+  max-width: 300px;
+  max-height: 505px;
+  border-radius: 10px;
+  border: 5px solid white;
+}
+
+// All Cards
+
+select {
+  background-color: black;
+  color: #9986c9;
+  border: 1px solid #9986c9;
+  border-radius: 2px;
+  padding: 5px 0px 5px 5px;
+  font-size: 16px;
+}
+
+.filter-menu {
+  margin: 0px 0px 20px 0px;
+}
+
+// Card of the Day and ShowPage
+
+.bold {
+  color: #9986c9;
+  font-weight: 600;
+}
+
+$subtitle-color: #9986c9;
+$subtitle-family: 'Kings', cursive;
+$subtitle-size: 40px;
+
+// Images
+
+.is-horizontal-center {
+  justify-content: center;
+}
+
+.flipped {
+  transform: rotate(180deg);
+}
+
+// Background
+
+#myVideo {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+// Bulma
+
+@import '~bulma/bulma.sass';
