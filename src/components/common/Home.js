@@ -40,7 +40,7 @@ Spread out in fiery points<br />
 Glowed into words, then would be savagely still.</p>
       </div>
       <div className='logo'>
-        <img src='https://i.imgur.com/j0zp3a2.png' alt='logo' width='350px'/>
+        <img src='https://i.imgur.com/XeDM7u1.png' alt='logo' width='350px'/>
       </div>
       <div>
         <p id='hidden-home'>
