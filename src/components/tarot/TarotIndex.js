@@ -49,22 +49,25 @@ function TarotIndex() {
       {isError && <Error />}
       {isLoading && <Loading />}
       {!isLoading && !isError && cards &&
-        <section className="section">
           <div className="container">
-            <h2 className="subtitle info"><span>🔮</span> All Cards <span>🔮</span></h2>
-            <div className='filter-menu'>
-              <select className="filter" onChange={handleFilter}>
-                <option>All</option>
-                <option>Major</option>
-                <option>Cups</option>
-                <option>Pentacles</option>
-                <option>Swords</option>
-                <option>Wands</option>
-              </select>
+            <div className='title-index'>
+              <div>
+                <h2 className="title-reading info"><span>🍄</span> All Cards <span>🍄</span></h2>
+              </div>
+              <div className='filter-menu'>
+                <select className="filter" onChange={handleFilter}>
+                  <option>All</option>
+                  <option>Major</option>
+                  <option>Cups</option>
+                  <option>Pentacles</option>
+                  <option>Swords</option>
+                  <option>Wands</option>
+                </select>
+              </div>
             </div>
-            <div className="columns is-multiline">
+            <div className="gallery">
               {filterCards(sortedCards).map(card => (
-                <div key={card.name_short} className="column is-one-quarter-desktop is-one-third-tablet">
+                <div key={card.name_short} className="individual-gallery">
                   <Link to={`/tarot/${card.name_short}`}>
                     <div className="card">
                       <div className="card-image">
@@ -78,7 +81,6 @@ function TarotIndex() {
               ))}
             </div>
           </div>
-        </section>
       }
     </>
   )

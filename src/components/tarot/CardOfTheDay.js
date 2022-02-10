@@ -28,29 +28,29 @@ function CardOfTheDay() {
       {isError && <Error />}
       {isLoading && <Loading />}
       {!isLoading && !isError && singleCard && (
-        <section className='section is-vcentered'>
-          <div className='container'>
-            <h4 className='has-text-centered subtitle'><span>🔮</span> Card Of The Day <span>🔮</span></h4>
-            <div className='columns is-centered'>
-              <div className='column is-half is-flex is-horizontal-center'>
-                <figure className='image'>
-                  <img className={`image-card ${!isUp ? 'flipped' : ''}`} src={images[singleCard.name_short]} />
-                </figure>
-              </div>
-              <div className='column is-half'>
-                <p><span>🦋</span><span className='bold'> Name:</span> {singleCard.name}</p>
-                < br/>
-                <p>{isUp ? <span>☝️</span> : <span>👇</span>}<span className='bold'> Orientation:</span>
-                  {isUp ? <span> Upright</span> : <span> Upside Down</span>}</p>
-                < br/>
-                <p><span>✨</span><span className='bold'> Meaning: </span>
-                  {isUp ? <span> {singleCard.meaning_up}</span> : <span> {singleCard.meaning_rev}</span>}</p>
-                < br/>
-                <p><span>🧚‍♀️</span> <span className='bold'>Description: </span>{singleCard.desc}</p>
-              </div>
+        <div>
+          <div className='title-index'>
+            <h2 className='title-reading info'><span>🧝🏼‍♀️</span> Card Of The Day <span>🧝🏼‍♀️</span></h2>
+          </div>
+          <div className='card-page'>
+            <div className='card-page-img'>
+              <figure className='image'>
+                <img className={`image-card ${!isUp ? 'flipped' : ''}`} src={images[singleCard.name_short]} />
+              </figure>
+            </div>
+            <div className='card-page-info'>
+              <p>&#9734; Name &#8594; {singleCard.name}</p>
+              < br/>
+              <p>&#9734; Orientation &#8594; 
+                {isUp ? <span> Upright</span> : <span> Upside Down</span>}</p>
+              < br/>
+              <p>&#9734; Meaning &#8594;
+                {isUp ? <span> {singleCard.meaning_up}</span> : <span> {singleCard.meaning_rev}</span>}</p>
+              < br/>
+              <p>&#9734; Description &#8594; {singleCard.desc}</p>
             </div>
           </div>
-        </section>
+        </div>
       )}
     </>
   )

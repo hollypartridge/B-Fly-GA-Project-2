@@ -28,29 +28,29 @@ function TarotShow() {
       {isError && <Error />}
       {isLoading && <Loading />}
       {!isLoading && !isError && cards &&
-      <section className='section is-vcentered'>
         <div className='container'>
           {cards.filter(card => card.name_short.includes(cardId)).map(filteredCard => (
             <div key={filteredCard.name}>
-              <h4 className='has-text-centered subtitle'><span>🔮</span> {filteredCard.name} <span>🔮</span></h4>
-              <div className='columns is-centered'>
-                <div className='column is-half is-flex is-horizontal-center'>
+              <div className='title-index'>
+                <h4 className='title-reading info'><span>🧚‍♀️</span> {filteredCard.name} <span>🧚‍♀️</span></h4>
+              </div>
+              <div className='card-page'>
+                <div className='card-page-img'>
                   <figure className='image'>
                     <img className='image-card' src={images[filteredCard.name_short]} />
                   </figure>
                 </div>
-                <div className='column is-half'>
-                  <p><span>☝️</span> <span className='bold'>Meaning Upright: </span>{filteredCard.meaning_up}</p>
+                <div className='card-page-info'>
+                  <p>&#9734; Meaning Upright &#8594; {filteredCard.meaning_up}</p>
                   < br/>
-                  <p><span>👇</span><span className='bold'>Meaning Upside Down:</span> {filteredCard.meaning_up}</p>
+                  <p>&#9734; Meaning Upside Down &#8594; {filteredCard.meaning_up}</p>
                   < br/>
-                  <p><span>🧚‍♀️</span> <span className='bold'>Description: </span>{filteredCard.desc}</p>
+                  <p>&#9734; Description &#8594; {filteredCard.desc}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
-      </section>
       }
     </>
   )

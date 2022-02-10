@@ -5,7 +5,7 @@ import CardOfTheDay from './components/tarot/CardOfTheDay'
 import TarotIndex from './components/tarot/TarotIndex'
 import TarotReading from './components/tarot/TarotReading'
 import TarotShow from './components/tarot/TarotShow'
-import Deck from './components/common/Deck'
+import Home from './components/common/Home'
 
 function App() {
 
@@ -15,8 +15,7 @@ function App() {
       <Nav />
       <Switch>
         <Route exact path="/">
-          <h1 className='title is-1 has-text-centered'><span>🔮</span> Mystic Ally's Tarot Reading <span>🔮</span></h1>
-          <Deck />
+          <Home />
         </Route>
         <Route path="/tarot/today">
           <CardOfTheDay />

@@ -1,75 +1,199 @@
-// Navbar
+$primarycolor: black;
+$mobile: 600px;
+$tablet: 900px;
+$featured: 930px;
 
-$navbar-background-color: transparent;
-$navbar-item-color: #9986c9;
-$navbar-item-hover-background-color: transparent;
-$navbar-item-hover-color: #feac00;
-
-// Homepage
-
-h1 {
-  position: relative;
+* {
+  font-family: 'Helvetica';
 }
 
-.title {
-  margin: 40px 0px 20px 0px;
+// * Navbar
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 10px;
+  @media screen and (max-width:$mobile) {
+    flex-direction: column;
+    align-items: center;
+  }
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 22px;
+  }
 }
 
-$title-color: #9986c9;
-$title-family: 'Kings', cursive;
-$title-size: 40px;
+.nav-right a {
+  margin: 0px 0px 0px 10px;
+  color: white;
+  padding: 5px 8px;
+  border: none;
+  border-radius: 3px;
+  font-size: 13px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: $primarycolor;
+  @media screen and (max-width:$mobile) {
+    display: block;
+    margin: 5px 0px;
+    text-align: center;
+    font-size: 15px;
+    padding: 6px 12px;
+  }
+}
+
+// * Homepage
+
+.home {
+  display: flex;
+  justify-content: space-between;
+  height: 95vh;
+  @media screen and (max-width:$featured) {
+    justify-content: center;
+  }
+  p {
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+}
+
+.poem {
+  display: flex;
+  align-items: flex-end;
+  margin: 0px 0px 20px 10px;
+  @media screen and (max-width:$featured) {
+    display: none;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin: 0px 0px 80px;
+}
+
+#hidden-home {
+  visibility: hidden;
+  @media screen and (max-width:$featured) {
+    display: none;
+  }
+}
+
 
 // Tarot Reading
 
-$card-background-color: transparent;
-$card-header-color: #9986c9;
-$card-footer-border-top: none;
-
-.time {
-  color: #feac00;
-  text-transform: uppercase;
-  font-size: 30px;
-  font-family: 'Kings', cursive;
-}
-
 .info, .ready {
-  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .ready {
+  margin: 10px 0px 20px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0px 0px 20px 0px;
+  button {
+  color: white;
+  padding: 5px 8px;
+  border-radius: 3px;
+  font-size: 13px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: $primarycolor;
+  border: none;
+  }
 }
 
-.card-header {
-  justify-content: center;
+.title-reading {
+  margin: 10px 0px 10px 0px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  @media screen and (max-width:$mobile) {
+    margin: 20px 0px 10px 0px;
+  }
+}
+
+.card-meaning-reading {
+  width: 80%;
   text-align: center;
-  margin: 0rem 0rem 2rem 0rem;
 }
 
-.card-footer {
-  padding: 2rem 0.25rem;
+.reading {
+  display: flex;
+  @media screen and (max-width:$mobile) {
+    flex-direction: column;
+    align-items: center;
+  }
+  span, p {
+    margin: 0px 0px 10px 0px;
+    font-size: 14px;
+  }
 }
 
-p, span {
-  color: #9986c9;
-}
-
-.image {
-  max-width: 300px;
-  max-height: 505px;
-  border-radius: 10px;
-  border: 5px solid white;
+.individual-columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 33%;
+  @media screen and (max-width:$mobile) {
+    width: 60%;
+    margin: 20px 0px;
+    padding: 20px 0px;
+    border: 1px solid black;
+  }
+  img {
+    width: 100%;
+  }
 }
 
 // All Cards
 
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  @media screen and (max-width:$mobile) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.individual-gallery {
+  width: 25%;
+  margin: 0px;
+  @media screen and (max-width:$tablet) {
+    width: 33%;
+  }
+  @media screen and (max-width:$mobile) {
+    width: 60%;
+  }
+  img {
+    width: 100%;
+  }
+}
+
 select {
-  background-color: black;
-  color: #9986c9;
-  border: 1px solid #9986c9;
+  background-color: transparent;
+  color: $primarycolor;
+  border: 1px solid $primarycolor;
   border-radius: 2px;
   padding: 5px 0px 5px 5px;
-  font-size: 16px;
+  font-size: 12px;
+  margin: 10px 0px 0px 0px;
+  text-align: center;
+}
+
+.title-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .filter-menu {
@@ -78,14 +202,41 @@ select {
 
 // Card of the Day and ShowPage
 
-.bold {
-  color: #9986c9;
-  font-weight: 600;
+.card-page {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+  @media screen and (max-width:$tablet) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-$subtitle-color: #9986c9;
-$subtitle-family: 'Kings', cursive;
-$subtitle-size: 40px;
+.card-page-info {
+  width: 40%;
+  font-size: 14px;
+  @media screen and (max-width:$tablet) {
+    width: 45%;
+    text-align: center;
+  }
+  @media screen and (max-width:$mobile) {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+.card-page-img {
+  width: 25%;
+  @media screen and (max-width:$tablet) {
+    width: 40%;
+  }
+  @media screen and (max-width:$mobile) {
+    width: 60%;
+  }
+  img {
+    width: 100%;
+  }
+}
 
 // Images
 
@@ -97,9 +248,7 @@ $subtitle-size: 40px;
   transform: rotate(180deg);
 }
 
-// Background
-
-#myVideo {
+.background {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
@@ -108,8 +257,29 @@ $subtitle-size: 40px;
   right: 0;
   top: 0;
   bottom: 0;
+  z-index: -1;
 }
 
-// Bulma
+//  * Error Handling
 
-@import '~bulma/bulma.sass';
+.error-loading-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+  background-color: transparent;
+  border: 1px solid black;
+  margin: 0px 1px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 00px 0px 0px 0px;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+  }
+}
+
+.error-loading-para {
+  font-size: 14px;
+}
