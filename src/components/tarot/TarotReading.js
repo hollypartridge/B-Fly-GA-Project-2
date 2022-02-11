@@ -40,9 +40,6 @@ function TarotReading() {
 
   return (
     <>
-      {isError && <Error />}
-      {isLoading && <Loading />}
-      {readingCards &&
       <div>
         <div className='intro'>
           <h2 className="title-reading">🦋 Tarot Reading 🦋</h2>
@@ -54,17 +51,24 @@ function TarotReading() {
           Each card has a different meaning.</p> 
           <p className='ready'>Are you ready to meet your fate?</p>
           {isPlaying ? 
-            <button onClick={handleClick}>
+            <button 
+              onClick={handleClick}
+            >
               Play Again
             </button>
             :
-            <button onClick={handleClick}>
+            <button 
+              onClick={handleClick}
+            >
             Start Reading
             </button>}
         </div>
         {isPlaying && 
         <div className='reading'>
-          {newReadingCards.map(card => (
+          {isError && <Error />}
+          {isLoading && <Loading />}
+          {readingCards &&
+          newReadingCards.map(card => (
             <><div key={card.name_short} className='individual-columns'>
               <p className='card-info'>🧝🏼‍♀️ {card.time} 🧝🏼‍♀️</p>
               <p className='card-info'>🕸 {card.name} 🕸</p>
@@ -95,7 +99,6 @@ function TarotReading() {
           ))}
         </div>}
       </div>
-      }
     </>
   )
 }
