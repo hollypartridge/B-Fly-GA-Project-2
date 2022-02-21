@@ -16,10 +16,10 @@
 * [Key Learning](#key-learning "Goto key-learning")
 
 ## Overview
-* A React application that consumes a public API. 
+* A React application consuming a public API that produces tarot readings. 
 * Pair Programming | Timeframe: 48 Hour Hackathon.
 
-## Play Deployed Version
+## Deployed Version
 The deployed version can be found [**here.**](https://tarot-reading-react.netlify.app/ "here.")
 
 ## Brief
