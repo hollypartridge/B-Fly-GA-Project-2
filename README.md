@@ -1,6 +1,6 @@
 # B-FLY | GA Project 1
 
-![B-FLY](/assets/b-fly.gif)
+![B-FLY](/assets/homepage.png)
 
 ## Table of Contents
 * [Overview](#overview "Goto overview")
@@ -84,6 +84,8 @@ const newReadingCards = readingCards.map((card, index) => {
  <img className={!card.isUp ? 'flipped' : ''} src={images[card.name_short]} alt={card.name} />
 ```
 
+![Tarot Reading](/assets/tarot-reading.png)
+
 #### All Cards
 We created an index page in our app to display all the cards in the tarot deck, with each card linking to its own individual show page. Here we came up against a couple of issues with our API: it didn't have any images and it didn't have a single end point. To get around the images issue we uploaded the images to imgur and created an object in a seperate file `images.js` that contained links to these images, with keys that matched the `name_short` key of our API. To address the end point issue we linked to `/tarot/${card.name_short}` on the index page and then used `useParams` and a filter to access the data from the API on the show page.
 
@@ -107,6 +109,8 @@ return (
   <>
     {cards.filter(card => card.name_short.includes(cardId)).map(filteredCard => ...
 ```
+
+![Index](/assets/tarot-index.png)
 
 #### Error Handling
 We used error handling to display when there was an error or when the API was loading to create a better user experience. To do this we built `Error.js` and `Loading.js` files in our `common` folder, containing JSX to display loading or error text. In the files making API requests we created a variable `isError` and set this in the catch block of our `getData` function. We imported the Error component and used conditional rendering to display it if there was an error. To work out whether the page was loading we created a value `isLoading` with a Boolean value that calculates true if there is no error and if the array that contains the data is empty. Again, we imported the Loading component and used conditional rendering to display it if it was loading.
@@ -138,6 +142,8 @@ return (
 ## Bugs
 
 **Card of the Day | Produces different cards throughout the day:**  When we were planning the functionality of our application, we wanted the card of the day to produce a random card from the deck. We achieved this, however the card changes each time the page renders, which isn't ideal for the feature. We ran out of time during the hackathon to improve this but we would like to solve this by setting the card of the day in local storage.
+
+![Card of the day](/assets/card-of-the-day.png)
 
 ## Challenges
 
