@@ -1,4 +1,4 @@
-# B-FLY | GA Project 1
+# B-FLY | GA Project 2
 
 ![B-FLY](/assets/homepage.png)
 
