@@ -65,10 +65,10 @@ Day 2:
 * CSS
 
 ### The Build
-This project was created using a Live Share on VSCode while working together on Zoom. 
+This project was created using a Live Share on VSCode while working together on Zoom. We divided the build between us, coding separate components whilst discussing what we were doing. Working this way enabled us to problem solving together while also being time efficient.
 
 #### Tarot Reading
-We created our app to produce a three card tarot reading for the user. To do this we used the API's end point to request 3 random cards from the deck. For the API requests we set up a `lib` file and used Axios to get the data. We used an `onClick` event and conditional rendering to display the cards when the `start reading` button is clicked. In a tarot deck the cards have different meanings depending on their orientation. To deal with this we mapped through our original array and used the spread operator to create a new array with 2 more keys: `time` and `isUp`. The value of `isUp` was a randomly generated Boolean value, then used in the JSX to determine which card meaning was displayed and the orientation of the card. This was changed by adding a class of `flipped` using a ternary operator.
+We created our app to produce a three card tarot reading for the user. To do this we used the API's endpoint to request 3 random cards from the deck. For the API requests we set up a `lib` file and used Axios to get the data. We used an `onClick` event and conditional rendering to display the cards when the `start reading` button is clicked. In a tarot deck the cards have different meanings depending on their orientation. To deal with this we mapped through our original array and used the spread operator to create a new array with 2 more keys: `time` and `isUp`. The value of `isUp` was a randomly generated Boolean value, then used in the JSX to determine which card meaning was displayed and the orientation of the card. This was changed by adding a class of `flipped` using a ternary operator.
 
 ```js
 const newReadingCards = readingCards.map((card, index) => {
@@ -87,7 +87,7 @@ const newReadingCards = readingCards.map((card, index) => {
 ![Tarot Reading](/assets/tarot-reading.png)
 
 #### All Cards
-We created an index page in our app to display all the cards in the tarot deck, with each card linking to its own individual show page. Here we came up against a couple of issues with our API: it didn't have any images and it didn't have a single end point. To get around the images issue we uploaded the images to imgur and created an object in a seperate file `images.js` that contained links to these images, with keys that matched the `name_short` key of our API. To address the end point issue we linked to `/tarot/${card.name_short}` on the index page and then used `useParams` and a filter to access the data from the API on the show page.
+We created an index page in our app to display all the cards in the tarot deck, with each card linking to its own individual show page. Here we came up against a couple of issues with our API: it didn't have any images and it didn't have a single end point. To get around the images issue we uploaded the images to imgur and created an object in a separate file `images.js` that contained links to these images, with keys that matched the `name_short` key of our API. To address the end point issue we linked to `/tarot/${card.name_short}` on the index page and then used `useParams` and a filter to access the data from the API on the show page.
 
 ```js
 const [cards, setCards] = React.useState([])
